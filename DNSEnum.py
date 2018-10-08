@@ -3,7 +3,6 @@ import socket
 
 f = input("Please enter the full name of the file with the host names. Make sure it is in CSV format: ");
 hosts_file = open(f, 'r');
-#hosts_file = hosts_file.readlines();
 hosts= []; 
 for line in hosts_file:
     line = line.replace(" ", "").strip().split(",");
