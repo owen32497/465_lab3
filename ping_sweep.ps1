@@ -1,1 +1,16 @@
-﻿
+﻿$range=Read-Host("Enter an IP range: ")
+$ip1,$ip2=$range.split('-')
+$ip1 = $ip1 -replace ' ',''
+$ip2 = $ip2 -replace ' ',''
+Write-Host($ip1)
+Write-Host($ip2)
+$ip1a,$ip1b,$ip1c,$ip1d = $ip1.split('.')
+$ip2a,$ip2b,$ip2c,$ip2d = $ip2.split('.')
+Write-Host($ip1a)
+Write-Host($ip1b)
+Write-Host($ip1c)
+Write-Host($ip1d)
+Write-Host($ip2a)
+Write-Host($ip2b)
+Write-Host($ip2c)
+Write-Host($ip2d)
