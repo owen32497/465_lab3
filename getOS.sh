@@ -10,14 +10,16 @@ nixport=22
 
 while read addr; do
     #check for linux
-    nix="$(nc -nzv $addr $nixport)"
-    test="$(echo "what the fuck")"
-    echo "nix? ${nix}"
-    if [[ "${nix}" == *"(ssh) open"* ]] 
+    nix="$(nc -nzv $addr $nixport 2>&1)"
+    if [[ "$nix" == *"(ssh) open"* ]] 
     then
-        echo "$addr"
-        break
+        echo -e "$addr\t=> Linux"
+    else
+        win="$(nc =nzv $addr $winport 2>&1)"
+        if [[ "$win" == *"(smb) open"* ]]
+        then
+            echo -e "$addr\t=> Windows"
+        fi
     fi
-    echo "sdfasdfasdf"
 
 done < $file
