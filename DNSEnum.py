@@ -1,7 +1,8 @@
+#!/usr/bin/python3
 #This script was written by Nicholas Graca
-import socket
+import socket, sys
 
-f = input("Please enter the full name of the file with the host names. Make sure it is in CSV format: ");
+f = str(sys.argv[1]);
 hosts_file = open(f, 'r');
 hosts= []; 
 for line in hosts_file:
