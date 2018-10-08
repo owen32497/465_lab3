@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 #This script was written by Nicholas Graca
 import socket
 
