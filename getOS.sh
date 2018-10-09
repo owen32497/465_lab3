@@ -9,13 +9,14 @@ winport=445
 nixport=22
 
 while read addr; do
-    #check for linux
+    # check for linux
     nix="$(nc -nzv $addr $nixport 2>&1)"
     if [[ "$nix" == *"(ssh) open"* ]] 
     then
         echo -e "$addr\t=> Linux"
+    # check for windows
     else
-        win="$(nc =nzv $addr $winport 2>&1)"
+        win="$(nc -nzv $addr $winport 2>&1)"
         if [[ "$win" == *"(smb) open"* ]]
         then
             echo -e "$addr\t=> Windows"
