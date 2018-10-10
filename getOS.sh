@@ -8,6 +8,13 @@ file=$1
 winport=445
 nixport=22
 
+#check that the program is being used properly
+if [ -z $file ]
+then
+    echo "Usage: ./getOS.sh [file containing IP addresses]"
+    exit 1
+fi
+
 while read addr
 do
     # check for linux
