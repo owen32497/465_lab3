@@ -1,12 +1,5 @@
 #!/bin/bash
 
-#result=$(ping 8.8.8.8 -c 1 | tail -5 | head -1| cut -d ' ' -f6)
-
-#if[$result -eq 'ttl=124']
-#then 
-    #echo 
-
-
 file=$1
 if [ -z $file ]
 then
