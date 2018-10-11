@@ -1,3 +1,6 @@
+# Gonna be used for bash to call prips when needed
+# Essentially a helper function 
+
 prips() {
   cidr=$1
 
