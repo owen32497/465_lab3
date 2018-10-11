@@ -1,5 +1,5 @@
+#!/usr/bin/python
 #Nicholas Carrigan
-#!/usr/bin/env python
 import socket
 import subprocess
 import sys
