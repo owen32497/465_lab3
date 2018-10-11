@@ -9,6 +9,16 @@ port=$2
 echo "What would you like to scan?"
 read scan
 
-# Scan IPs in the range of 10.10.1.
+# Scan the IP's
+network=scan
+for host in {1..254}; do
+    ping -c1 $network$host &>/dev/null;
+    [ $? -eq 0 ] && echo "$network$host is up"
+done
 
-# Subnet check
+# Scan the ports
+network=scan
+for port in {1..150}; do 
+    (echo > /dev/tcp/$host/$port) &>/dev/null;
+    [ $? -eq 0 ] && echo "$port open"
+done
