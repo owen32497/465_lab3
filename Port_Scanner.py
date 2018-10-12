@@ -1,4 +1,4 @@
-#!/usr/bin/python
+!/usr/bin/python
 # Nicholas Carrigan
 # Port_Scanner.py
 
@@ -6,7 +6,8 @@ import struct
 import socket
 import os
 import sys
-from netaddr import IPNetwork
+from netaddr import *
+import pprint
  
 def tcpScan(ipaddress, ports):
     try:
