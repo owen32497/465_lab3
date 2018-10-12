@@ -67,6 +67,7 @@ def main():
     if inputType == 2:
         for ip in IPNetwork(range1):
            ipList.append(str(ip))
+    ports = raw_input("Enter port range (IE: 20-80): ").split('-')
     ports = raw_input("Enter ports (IE: 20,21,22): ").split(',')
     tcpScan(ipList, ports)
  
